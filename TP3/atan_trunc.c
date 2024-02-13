@@ -54,11 +54,18 @@ double atan_trunc(double x, int n) {
   double t = x;
   double s = t;
   //  IB : 1 <= k && k <= n
-  //    && t == x^(2 * k + 1) / (2 * k + 1)
+  //    && t == x^2 / ((2 * k + 1) / (2 * k + 1))
   //    && s == somme(x^(2 * j + 1) / 2 * j + 1 ; j == 0 ... k)
   //  QC : k
+
+
+  // PROGRAMME NON FONCTIONNEL JE NY ARRIVE PAS A TROUVER LA BONNE FORMULE
+
   for (int k = 1; k <= n; ++k) {
-    t *= x * x / (2 * k + 1) / (2 * k - 1);
+    t *= -1;
+    t *= x * x;
+    t /= 2 * k + 1;
+    t /= 2 * k - 1;
     s += t;
   }
   return s;
