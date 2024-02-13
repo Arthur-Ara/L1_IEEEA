@@ -23,7 +23,7 @@ int main(void) {
   //        par le dernier appel à scanf égale 1
   //  QC : nombre d'appels à scanf
   while (scanf("%lf", &x) == 1) {
-    //  IB : 0 <= k && k <= N_MAX + 1
+    //  IB : 0 <= k && k <= N_MAX && s = somme((-1)^j * x^(2j) / (2j)!) && t = (-1)^k * x^(2k) / (2k)!
     //    && les lignes avec les troncatures en x de 0 à k - 1 ont été affichées
     //        conformément à la spécification
     //  QC : k
