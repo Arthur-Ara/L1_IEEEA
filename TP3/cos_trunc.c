@@ -52,13 +52,15 @@ double cos_trunc(double x, int n) {
   if (n <= 0) {
     return 0.0;
   }
+  int k = 0;
   double t = 1.0;
   double s = t;
   //  IB : 1 <= k && k <= n
   //    && t == (-1)^k * x^(2k) / (2k)!
   //    && s == somme((-1)^j * x^(2j) / (2j)! ; j == 0 ... k)
   //  QC : k
-  for (int k = 1; k <= n; ++k) {
+  while (k < n) {
+    k += 1;
     t *= -x * x / ((2 * k - 1) * (2 * k));
     s += t;
   }
