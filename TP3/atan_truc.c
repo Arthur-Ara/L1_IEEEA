@@ -1,7 +1,7 @@
 //  Pour toutes les valeurs flottantes x lues sur l'entrée standard,
 //    affiche sur la sortie standard,
-//    pour la fonction f : x --> sinh(x),
-//    les troncatures à l'ordre n
+//    pour la fonction f : x --> atan(x),
+//    les troncatures à l'ordre 2n+1
 //    de son développement en série au voisinage de 0,
 //    pour n allant de 0 à 9,
 //    puis f(x).
@@ -14,12 +14,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//  sinh_trunc : renvoie la troncature à l'ordre n
+//  atan_truc : renvoie la troncature à l'ordre n
 //    du développement en série au voisinage de 0
-//    de la fonction x --> sinh(x).
+//    de la fonction x --> ln(1 + x).
 //  AE : n >= 0
-//  AS : sinh_trunc(x, n) == somme(x^(2*j + 1) / (2*j + 1)! ; j == 0 ... n)
-double sinh_trunc(double x, int n);
+//  AS : atan_truc(x, n) == somme((-1)^j * x^(2*j+1) / 2*j+1 ; j == 0 ... n)
+double atan_truc(double x, int n);
 
 #define N_MAX 9
 
@@ -35,31 +35,34 @@ int main(void) {
   //        par le dernier appel à scanf égale 1
   //  QC : nombre d'appels à scanf
   while (scanf("%lf", &x) == 1) {
-    //  IB : 0 <= k && k <= N_MAX && s == somme(x^(2*j + 1) / (2*j + 1)!) && t == x^(2*k + 1) / (2*k + 1)!
+    //  IB : 0 <= k && k <= N_MAX && s = somme((-1)^j * x^(2*j+1) / 2*j+1)
+    //    && t = (-1)^k * x^(2*k+1)
     //    && les lignes avec les troncatures en x de 0 à k - 1 ont été affichées
     //        conformément à la spécification
     //  QC : k
     for (int k = 0; k <= N_MAX; ++k) {
-      printf("%" PRI_FLT "\t%d\n", sinh_trunc(x, k), k);
+      printf("%" PRI_FLT "\t%d\n", atan_truc(x, k), k);
     }
-    printf("%" PRI_FLT "\n", sinh(x));
+    printf("%" PRI_FLT "\n", atan(x));
   }
   return EXIT_SUCCESS;
 }
 
-double sinh_trunc(double x, int n) {
+double atan_truc(double x, int n) {
   if (n <= 0) {
-    return x;
+    return 0.0;
   }
+  int k = 0;
   double t = x;
   double s = t;
-  //  IB : 1 <= k && k <= n
-  //    && t == x^(2 * k + 1) / (2 * k + 1)!
-  //    && s == somme(x^(2 * j + 1) / (2 * j + 1)! ; j == 0 ... k)
+  //  IB : 0 <= k && k <= n
+  //    && t == (-1)^(2*k+1)
+  //    && s == somme((-1)^(j+1) * x^j / j ; j == 1 ... k)
   //  QC : k
-  for (int k = 1; k <= n; ++k) {
-    t *= x * x / ((2 * k) * (2 * k + 1));
-    s += t;
+  while (k < n) {
+    k += 1;
+    t *= -x * x;
+    s += t / (2 * k + 1);
   }
   return s;
 }
