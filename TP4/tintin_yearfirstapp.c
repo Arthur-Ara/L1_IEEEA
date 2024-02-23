@@ -76,7 +76,6 @@ int main ( int argc, char *argv[] ) {
   char *end;
   errno = 0;
   long int value = strtol( argv[1], &end, 10);
-  printf("VALUE : %ld\n", value);
   if ( errno != 0) {
     printf("%s: Value out of range\n", argv[0]);
     return EXIT_FAILURE;
