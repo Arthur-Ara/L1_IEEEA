@@ -73,6 +73,8 @@ int main ( int argc, char *argv[] ) {
   // taille : divise la taille en octet du tableau personnage par la
   // taille d'une case mémoire (character) défini par la structure.
 
+  // IB : 0 <= k-1
+  // Q.C : k
   for (size_t k = 0; k<taille; ++k) {
     char *result = strstr(personnage[k].lastname, argv[1]);
     char *result2 = strstr(personnage[k].firstname, argv[1]);
