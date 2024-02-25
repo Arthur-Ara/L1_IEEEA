@@ -84,6 +84,8 @@ int main ( int argc, char *argv[] ) {
     return EXIT_FAILURE;
   }
 
+  // IB : 0 <= k-1
+  // Q.C : k
   for (size_t k = 0; k<taille; ++k) {
     if ( value == personnage[k].yearfirstapp ) {
       character_display_names( &personnage[k] );
