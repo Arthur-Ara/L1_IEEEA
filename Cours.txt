@@ -1,1 +1,21 @@
+Chapitre 3 : C : Compléments aux bases 
+
+Deux types de fichiers sont distingués : 
+
+  - .h contenant les déclarations ( "header" ) 
+  - .c contenant les définitions 
+
+Un fichier objet est un fichier écrit en code machine, directement compréhensible par le processeur. ( d'extension ".o")
+
+Une directive est une ligne d'un fichier C qui débute par le caractère dièse # se poursuit soit : 
+
+  - Par la fin de ligne , dans ce cas c'est la " directive nulle "
+  - Par un mot-clé, d'éventuels autres lexèmes et la fin de ligne 
+
+Une directive peut s'écrire sur plusieurs lignes de texte consécutives au moyen de / .
+
+Le préprocesseur connait douze directives dont : 
+
+  - #define , ainsi que les termes de "macroconstante" et "macrofonction"
+  - #include
 
