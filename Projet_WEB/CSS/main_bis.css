@@ -1,0 +1,108 @@
+body{
+    background-image: url("../Images/main.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#Accueil{
+    font-size: 150%;
+    font-family: Snell Roundhand, cursive ;
+    text-shadow: 0 0 5px white;
+    text-decoration: none;
+}
+
+#Accueil:hover{
+    color: black;
+}
+
+#Accueil:visited{
+    color: black;
+}
+
+#Projet{
+    font-size: 200%;
+    position: relative;
+    left : 775px;
+    font-family: Snell Roundhand, cursive ;
+    text-shadow: 0 0 20px white;
+}
+
+#Inscription{
+    font-size: 150%;
+    position: absolute;
+    top :20px;
+    right: 200px;
+    font-family: Snell Roundhand, cursive ;
+    text-shadow: 0 0 5px white;
+    text-decoration: none;
+}
+
+#Inscription:hover, #Connect:hover{
+    color: black;
+}
+
+#Inscription:visited{
+    color: black;
+}
+
+#Connect{
+    font-size: 150%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: Snell Roundhand, cursive ;
+    text-shadow: 0 0 5px white;
+    text-decoration: none;
+}
+
+#show_task{
+    font-size: 123%;
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    font-family: Snell Roundhand, cursive ;
+    text-shadow: 0 0 5px white;
+    text-decoration: none;
+}
+
+#Connect:hover{
+    color: black;
+}
+
+#Connect:visited{
+    color: black;
+}
+
+#Titre{
+    font-family: Snell Roundhand, cursive ;
+    text-shadow: 0 0 20px white;
+    text-decoration: none;
+    font-size: 200%;
+}
+
+#Paragraphe{
+    font-family: URW Chancery L, cursive;
+    color: rgb(255, 255, 255); 
+    font-size: 150%;
+}
+
+#ML{
+    font-family: URW Chancery L, cursive;
+    color: rgb(255, 255, 255);    
+    position: absolute;
+    bottom :-150px;
+    right: 25px;
+    font-size: 135%;
+}
+
+#TML{
+    font-family: URW Chancery L, cursive;
+    color: rgb(255, 255, 255);    
+    position: absolute;
+    bottom :-20px;
+    right: 390px;
+    font-size: 135%;
+
+}
